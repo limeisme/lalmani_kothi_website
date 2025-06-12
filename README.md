@@ -12,7 +12,7 @@ To run the website locally:
 
 Open the project folder and start your preferred web server, or simply open the HTML file in your browser.
 
-##Contributing
+## Contributing
 
 Feel free to open issues or submit pull requests.
 
