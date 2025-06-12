@@ -11,12 +11,15 @@
     <link rel="stylesheet" href="hotelier-1.0.0/css/style.css">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 </head>
 <body>
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top animate__animated animate__fadeInDown">
     <div class="container">
-      <a class="navbar-brand logo" href="index.html">Laalmani Kothi</a>
+      <a class="navbar-brand logo d-flex align-items-center" href="index.html" style="height:70px;">
+        <img src="img/2.png" alt="Laalmani Kothi Logo" style="height:60px;width:auto;max-height:60px;object-fit:contain;display:inline-block;">
+      </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -33,18 +36,20 @@
 
   <!-- Hero Section -->
   <header>
-    <section class="hero-section d-flex align-items-center" style="background-image: url('img/showcase.jpg'); min-height: 600px;">
+    <section class="hero-section d-flex align-items-center animate__animated animate__fadeIn" style="background-image: url('img/main pic.jpg'); min-height: 600px;">
       <div class="overlay"></div>
       <div class="container hero-content text-center">
-        <h1 class="display-3 fw-bold"><span class="text-primary">Enjoy</span> Your Stay</h1>
-        <p class="lead">नयनों में काशी बसे, जीवन सुख आधार, विश्वनाथ काशी करें, नमन तुम्हें साकार ।।</p>
-        <a class="btn btn-primary btn-lg mt-3" href="about.html">About Our Hotel</a>
+        <div class="hero-highlight-box" style="background: rgba(34,34,34,0.65); border-radius: 32px; box-shadow: 0 8px 32px #2228; padding: 48px 32px; display: inline-block; max-width: 600px; margin: 0 auto; backdrop-filter: blur(2px);">
+          <h1 class="display-3 fw-bold animate__animated animate__fadeInUp" style="color: #fff;"><span class="text-primary">Enjoy</span> Your Stay</h1>
+          <p class="lead animate__animated animate__fadeInUp animate__delay-1s" style="color: #f7c08a;">नयनों में काशी बसे, जीवन सुख आधार, विश्वनाथ काशी करें, नमन तुम्हें साकार ।।</p>
+          <a class="btn btn-primary btn-lg mt-3 animate__animated animate__pulse animate__infinite" href="about.html">About Our Hotel</a>
+        </div>
       </div>
     </section>
   </header>
 
   <!-- About Kashi Section -->
-  <section class="container section-space my-5">
+  <section class="container section-space my-5 wow animate__animated animate__fadeInUp">
     <div class="row align-items-center">
       <div class="col-md-6">
         <img src="img/p1.jpg" alt="Kashi Ghats" class="img-fluid rounded shadow">
@@ -60,7 +65,7 @@
   </section>
 
   <!-- Rooms Preview Section -->
-  <section class="rooms-section py-5 bg-light">
+  <section class="rooms-section py-5 bg-light wow animate__animated animate__fadeInUp">
     <div class="container">
       <h2 class="rooms-title mb-4">Our Rooms</h2>
       <div class="divider mb-4"></div>
@@ -103,7 +108,7 @@
   </section>
 
   <!-- Amenities Section -->
-  <section class="amenities-section py-5">
+  <section class="amenities-section py-5 wow animate__animated animate__fadeInUp">
     <div class="container">
       <h2 class="amenities-title mb-4">Amenities</h2>
       <div class="divider mb-4"></div>
@@ -133,7 +138,7 @@
   </section>
 
   <!-- Testimonials Section -->
-  <section class="testimonials-section py-5 bg-light">
+  <section class="testimonials-section py-5 bg-light wow animate__animated animate__fadeInUp">
     <div class="container">
       <h2 class="testimonials-title mb-4">What Our Guests Say</h2>
       <div class="divider mb-4"></div>
@@ -155,7 +160,7 @@
   </section>
 
   <!-- Call to Action -->
-  <section class="cta-section my-5">
+  <section class="cta-section my-5 wow animate__animated animate__fadeInUp">
     <div class="container">
       <h2 class="cta-title">Ready to Experience Kashi?</h2>
       <a href="rooms.html" class="cta-btn">Book Your Stay</a>
@@ -175,6 +180,27 @@
   <script src="hotelier-1.0.0/lib/waypoints/waypoints.min.js"></script>
   <script src="hotelier-1.0.0/lib/counterup/counterup.min.js"></script>
   <script src="hotelier-1.0.0/lib/owlcarousel/owl.carousel.min.js"></script>
+  <script>
+    new WOW().init();
+    // Button hover animation
+    document.querySelectorAll('.btn, .room-btn, .cta-btn').forEach(btn => {
+      btn.addEventListener('mouseenter', () => {
+        btn.classList.add('animate__animated', 'animate__pulse');
+      });
+      btn.addEventListener('mouseleave', () => {
+        btn.classList.remove('animate__animated', 'animate__pulse');
+      });
+    });
+    // Navbar link hover animation
+    document.querySelectorAll('.navbar .nav-link').forEach(link => {
+      link.addEventListener('mouseenter', () => {
+        link.classList.add('animate__animated', 'animate__pulse');
+      });
+      link.addEventListener('mouseleave', () => {
+        link.classList.remove('animate__animated', 'animate__pulse');
+      });
+    });
+  </script>
 </body>
 </html>
 

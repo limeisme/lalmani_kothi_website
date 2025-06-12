@@ -178,8 +178,8 @@ p{
 }
 .nav-links a {
     display: block;
-    padding: 12px 28px;
-    border-radius: 30px;
+    padding: 6px 16px;
+    border-radius: 22px;
     font-weight: 500;
     font-size: 1.1rem;
     transition: background 0.2s, color 0.2s;
@@ -187,6 +187,19 @@ p{
 .nav-links a.current, .nav-links a:hover {
     background: #f7c08a;
     color: #222;
+    box-shadow: none;
+}
+.navbar .nav-link {
+    padding: 4px 12px !important;
+    border-radius: 18px !important;
+    font-size: 1.05rem;
+    transition: background 0.2s, color 0.2s;
+    margin: 0 2px;
+}
+.navbar .nav-link.current, .navbar .nav-link.active, .navbar .nav-link:hover {
+    background: #f7c08a !important;
+    color: #222 !important;
+    box-shadow: none !important;
 }
 
 /* showcase */
