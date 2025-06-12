@@ -9,6 +9,54 @@
     <link rel="stylesheet" href="hotelier-1.0.0/css/style.css">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+    <!-- Add flip text animation CSS if not already present -->
+    <style>
+      .flip-text-wrapper {
+        display: inline-block;
+        position: relative;
+        height: 1em;
+        overflow: hidden;
+        vertical-align: bottom;
+      }
+      .flip-text-static {
+        display: inline-block;
+        margin-right: 0.2em;
+      }
+      .flip-text-flip {
+        display: inline-block;
+        vertical-align: bottom;
+        animation: flipText 4s infinite;
+      }
+      .flip-text-flip span {
+        display: block;
+        line-height: 1em;
+        color: #f7c08a;
+        font-weight: 700;
+        font-size: 1em;
+        animation: flipTextInner 12s infinite;
+        opacity: 0;
+        transform: translateY(100%);
+        position: absolute;
+        left: 0;
+        width: 100%;
+      }
+      .flip-text-flip span:nth-child(1) {
+        animation-delay: 0s;
+      }
+      .flip-text-flip span:nth-child(2) {
+        animation-delay: 4s;
+      }
+      .flip-text-flip span:nth-child(3) {
+        animation-delay: 8s;
+      }
+      @keyframes flipTextInner {
+        0% { opacity: 0; transform: translateY(100%); }
+        5% { opacity: 1; transform: translateY(0); }
+        30% { opacity: 1; transform: translateY(0); }
+        35% { opacity: 0; transform: translateY(-100%); }
+        100% { opacity: 0; transform: translateY(-100%); }
+      }
+    </style>
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top animate__animated animate__fadeInDown">
@@ -29,12 +77,44 @@
       </div>
     </div>
   </nav>
-  <main class="container my-5">
-    <div class="row align-items-center mb-5">
-      <div class="col-md-6 mb-4 mb-md-0">
-        <img src="img/p1.jpg" alt="Kashi Ghats" class="img-fluid rounded shadow">
+  <!-- Hero Section (with animated flip/scrolling text effect) -->
+  <header>
+    <section class="hero-section d-flex align-items-center animate__animated animate__fadeIn" style="background-image: url('img/main pic.jpg'); min-height: 600px;">
+      <div class="overlay"></div>
+      <div class="container hero-content text-center">
+        <div class="hero-highlight-box" style="background: rgba(34,34,34,0.65); border-radius: 32px; box-shadow: 0 8px 32px #2228; padding: 48px 32px; display: inline-block; max-width: 600px; margin: 0 auto; backdrop-filter: blur(2px);">
+          <h1 class="display-3 fw-bold animate__animated animate__fadeInUp" style="color: #fff;">
+            <span class="flip-text-wrapper">
+              <span class="flip-text-static">Discover</span>
+              <span class="flip-text-flip">
+                <span> Our Story</span>
+                <span> Kashi's Heritage</span>
+                <span> Laalmani Kothi</span>
+              </span>
+            </span>
+          </h1>
+          <p class="lead animate__animated animate__fadeInUp animate__delay-1s" style="color: #f7c08a;">नयनों में काशी बसे, जीवन सुख आधार, विश्वनाथ काशी करें, नमन तुम्हें साकार ।।</p>
+          <a class="btn btn-primary btn-lg mt-3 animate__animated animate__pulse animate__infinite" href="rooms.html">Our Rooms</a>
+        </div>
       </div>
-      <div class="col-md-6">
+    </section>
+  </header>
+  <main class="container my-5 animate__animated animate__fadeIn">
+    <div class="row align-items-center mb-5 wow animate__animated animate__fadeInUp">
+      <div class="col-md-6 mb-4 mb-md-0 animate__animated animate__fadeInUp" data-wow-delay="0.2s">
+        <div class="box about-img-box" style="width:100%;height:340px;max-width:100%;margin:0 auto;">
+          <div class="hover-point"></div>
+          <div class="hover-point"></div>
+          <div class="hover-point"></div>
+          <div class="hover-point"></div>
+          <div class="hover-point"></div>
+          <div class="hover-point"></div>
+          <div class="hover-point"></div>
+          <div class="hover-point"></div>
+          <div class="box-contents" style="background: url('img/p1.jpg') 50% 50% / cover no-repeat; border-radius: 18px; width:100%;height:100%;"></div>
+        </div>
+      </div>
+      <div class="col-md-6 animate__animated animate__fadeInUp" data-wow-delay="0.4s">
         <h1 class="mb-3 text-primary">About <span class="text-primary">Kashi (Varanasi)</span></h1>
         <div class="divider mb-3"></div>
         <h2>History & Significance</h2>
@@ -48,11 +128,21 @@
         <p>Whether you seek peace, adventure, or a glimpse into India’s soul, Kashi offers an unforgettable experience.</p>
       </div>
     </div>
-    <div class="row align-items-center">
-      <div class="col-md-6 order-md-2 mb-4 mb-md-0">
-        <img src="hotelier-1.0.0/img/about-1.jpg" alt="Laalmani Kothi" class="img-fluid rounded shadow">
+    <div class="row align-items-center wow animate__animated animate__fadeInUp">
+      <div class="col-md-6 order-md-2 mb-4 mb-md-0 animate__animated animate__fadeInUp" data-wow-delay="0.2s">
+        <div class="box about-img-box" style="width:100%;height:340px;max-width:100%;margin:0 auto;">
+          <div class="hover-point"></div>
+          <div class="hover-point"></div>
+          <div class="hover-point"></div>
+          <div class="hover-point"></div>
+          <div class="hover-point"></div>
+          <div class="hover-point"></div>
+          <div class="hover-point"></div>
+          <div class="hover-point"></div>
+          <div class="box-contents" style="background: url('hotelier-1.0.0/img/about-1.jpg') 50% 50% / cover no-repeat; border-radius: 18px; width:100%;height:100%;"></div>
+        </div>
       </div>
-      <div class="col-md-6 order-md-1">
+      <div class="col-md-6 order-md-1 animate__animated animate__fadeInUp" data-wow-delay="0.4s">
         <h2 class="mb-3 text-primary">About Laalmani Kothi</h2>
         <div class="divider mb-3"></div>
         <p>Laalmani Kothi blends the timeless charm of Kashi with modern luxury. Our hotel is designed for travelers seeking comfort, tradition, and a true taste of Varanasi’s hospitality. Located near the city’s spiritual and cultural landmarks, we offer a peaceful retreat with all amenities for a memorable stay.</p>
@@ -91,6 +181,7 @@
         link.classList.remove('animate__animated', 'animate__pulse');
       });
     });
+    // Remove JS tilt for .tilt-img (now handled by CSS)
   </script>
 </body>
 </html>

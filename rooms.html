@@ -10,6 +10,54 @@
     <link rel="stylesheet" href="hotelier-1.0.0/css/style.css">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+    <!-- Add flip text animation CSS -->
+    <style>
+      .flip-text-wrapper {
+        display: inline-block;
+        position: relative;
+        height: 1em;
+        overflow: hidden;
+        vertical-align: bottom;
+      }
+      .flip-text-static {
+        display: inline-block;
+        margin-right: 0.2em;
+      }
+      .flip-text-flip {
+        display: inline-block;
+        vertical-align: bottom;
+        animation: flipText 4s infinite;
+      }
+      .flip-text-flip span {
+        display: block;
+        line-height: 1em;
+        color: #f7c08a;
+        font-weight: 700;
+        font-size: 1em;
+        animation: flipTextInner 12s infinite;
+        opacity: 0;
+        transform: translateY(100%);
+        position: absolute;
+        left: 0;
+        width: 100%;
+      }
+      .flip-text-flip span:nth-child(1) {
+        animation-delay: 0s;
+      }
+      .flip-text-flip span:nth-child(2) {
+        animation-delay: 4s;
+      }
+      .flip-text-flip span:nth-child(3) {
+        animation-delay: 8s;
+      }
+      @keyframes flipTextInner {
+        0% { opacity: 0; transform: translateY(100%); }
+        5% { opacity: 1; transform: translateY(0); }
+        30% { opacity: 1; transform: translateY(0); }
+        35% { opacity: 0; transform: translateY(-100%); }
+        100% { opacity: 0; transform: translateY(-100%); }
+      }
+    </style>
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top animate__animated animate__fadeInDown">
@@ -30,40 +78,71 @@
       </div>
     </div>
   </nav>
-  <main class="container my-5">
-    <h1 class="rooms-title mb-4 text-primary">Our Rooms</h1>
-    <div class="divider mb-4"></div>
-    <div class="row rooms-cards">
+  <!-- Hero Section (with animated flip/scrolling text effect) -->
+  <header>
+    <section class="hero-section d-flex align-items-center animate__animated animate__fadeIn" style="background-image: url('img/main pic.jpg'); min-height: 600px;">
+      <div class="overlay"></div>
+      <div class="container hero-content text-center">
+        <div class="hero-highlight-box" style="background: rgba(34,34,34,0.65); border-radius: 32px; box-shadow: 0 8px 32px #2228; padding: 48px 32px; display: inline-block; max-width: 600px; margin: 0 auto; backdrop-filter: blur(2px);">
+          <h1 class="display-3 fw-bold animate__animated animate__fadeInUp" style="color: #fff;">
+            <span class="flip-text-wrapper">
+              <span class="flip-text-static">Explore</span>
+              <span class="flip-text-flip">
+                <span> Our Rooms</span>
+                <span> Comfort &amp; Luxury</span>
+                <span> Kashi Hospitality</span>
+              </span>
+            </span>
+          </h1>
+          <p class="lead animate__animated animate__fadeInUp animate__delay-1s" style="color: #f7c08a;">नयनों में काशी बसे, जीवन सुख आधार, विश्वनाथ काशी करें, नमन तुम्हें साकार ।।</p>
+          <a class="btn btn-primary btn-lg mt-3 animate__animated animate__pulse animate__infinite" href="contact.html">Book Now</a>
+        </div>
+      </div>
+    </section>
+  </header>
+  <main class="container my-5 animate__animated animate__fadeIn">
+    <h1 class="rooms-title mb-4 text-primary animate__animated animate__fadeInUp animate__delay-0_7s">Our Rooms</h1>
+    <div class="divider mb-4 animate__animated animate__fadeInUp animate__delay-1s"></div>
+    <div class="row rooms-cards wow animate__animated animate__fadeInUp">
       <div class="col-md-4 mb-4">
         <div class="room-card">
-          <img src="hotelier-1.0.0/img/room-1.jpg" class="room-img" alt="Deluxe Room">
+          <div class="box" style="height:180px;width:100%;max-width:320px;margin:0 auto 12px auto;">
+            <div class="hover-point"></div><div class="hover-point"></div><div class="hover-point"></div><div class="hover-point"></div><div class="hover-point"></div><div class="hover-point"></div><div class="hover-point"></div><div class="hover-point"></div>
+            <div class="box-contents" style="background: url('hotelier-1.0.0/img/room-1.jpg') 50% 50% / cover no-repeat; border-radius: 18px; height:180px;"></div>
+          </div>
           <div class="room-content">
-            <div class="room-title">Deluxe Room</div>
-            <div class="room-desc">Spacious, elegant, and equipped with all modern amenities for a comfortable stay in Kashi.</div>
-            <div class="room-price">₹3,500/night</div>
-            <a href="contact.html" class="room-btn">Book Now</a>
+            <div class="room-title animate__animated animate__fadeInUp animate__delay-1_2s">Deluxe Room</div>
+            <div class="room-desc animate__animated animate__fadeInUp animate__delay-1_4s">Spacious, elegant, and equipped with all modern amenities for a comfortable stay in Kashi.</div>
+            <div class="room-price animate__animated animate__fadeInUp animate__delay-1_6s">₹3,500/night</div>
+            <a href="contact.html" class="room-btn animate__animated animate__fadeInUp animate__delay-1_8s">Book Now</a>
           </div>
         </div>
       </div>
       <div class="col-md-4 mb-4">
         <div class="room-card">
-          <img src="hotelier-1.0.0/img/room-2.jpg" class="room-img" alt="Premium Suite">
+          <div class="box" style="height:180px;width:100%;max-width:320px;margin:0 auto 12px auto;">
+            <div class="hover-point"></div><div class="hover-point"></div><div class="hover-point"></div><div class="hover-point"></div><div class="hover-point"></div><div class="hover-point"></div><div class="hover-point"></div><div class="hover-point"></div>
+            <div class="box-contents" style="background: url('hotelier-1.0.0/img/room-2.jpg') 50% 50% / cover no-repeat; border-radius: 18px; height:180px;"></div>
+          </div>
           <div class="room-content">
-            <div class="room-title">Premium Suite</div>
-            <div class="room-desc">Experience luxury and tradition with a view of the city and the Ganges.</div>
-            <div class="room-price">₹5,000/night</div>
-            <a href="contact.html" class="room-btn">Book Now</a>
+            <div class="room-title animate__animated animate__fadeInUp animate__delay-2s">Premium Suite</div>
+            <div class="room-desc animate__animated animate__fadeInUp animate__delay-2_2s">Experience luxury and tradition with a view of the city and the Ganges.</div>
+            <div class="room-price animate__animated animate__fadeInUp animate__delay-2_4s">₹5,000/night</div>
+            <a href="contact.html" class="room-btn animate__animated animate__fadeInUp animate__delay-2_6s">Book Now</a>
           </div>
         </div>
       </div>
       <div class="col-md-4 mb-4">
         <div class="room-card">
-          <img src="hotelier-1.0.0/img/room-3.jpg" class="room-img" alt="Family Room">
+          <div class="box" style="height:180px;width:100%;max-width:320px;margin:0 auto 12px auto;">
+            <div class="hover-point"></div><div class="hover-point"></div><div class="hover-point"></div><div class="hover-point"></div><div class="hover-point"></div><div class="hover-point"></div><div class="hover-point"></div><div class="hover-point"></div>
+            <div class="box-contents" style="background: url('hotelier-1.0.0/img/room-3.jpg') 50% 50% / cover no-repeat; border-radius: 18px; height:180px;"></div>
+          </div>
           <div class="room-content">
-            <div class="room-title">Family Room</div>
-            <div class="room-desc">Perfect for families, with ample space and comfort for all ages.</div>
-            <div class="room-price">₹4,200/night</div>
-            <a href="contact.html" class="room-btn">Book Now</a>
+            <div class="room-title animate__animated animate__fadeInUp animate__delay-2_8s">Family Room</div>
+            <div class="room-desc animate__animated animate__fadeInUp animate__delay-3s">Perfect for families, with ample space and comfort for all ages.</div>
+            <div class="room-price animate__animated animate__fadeInUp animate__delay-3_2s">₹4,200/night</div>
+            <a href="contact.html" class="room-btn animate__animated animate__fadeInUp animate__delay-3_4s">Book Now</a>
           </div>
         </div>
       </div>
@@ -100,6 +179,7 @@
         link.classList.remove('animate__animated', 'animate__pulse');
       });
     });
+    // Remove JS tilt for .tilt-img (now handled by CSS)
   </script>
 </body>
 </html>

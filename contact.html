@@ -29,12 +29,24 @@
       </div>
     </div>
   </nav>
-  <main class="container my-5">
-    <h1 class="mb-4 text-primary">Contact Us</h1>
-    <div class="divider mb-4"></div>
-    <div class="row">
+  <!-- Hero Section for Contact Page -->
+  <header>
+    <section class="hero-section d-flex align-items-center animate__animated animate__fadeIn" style="background-image: url('img/main pic.jpg'); min-height: 400px;">
+      <div class="overlay"></div>
+      <div class="container hero-content text-center">
+        <div class="hero-highlight-box" style="background: rgba(34,34,34,0.65); border-radius: 32px; box-shadow: 0 8px 32px #2228; padding: 36px 24px; display: inline-block; max-width: 600px; margin: 0 auto; backdrop-filter: blur(2px);">
+          <h1 class="display-5 fw-bold animate__animated animate__fadeInUp animate__delay-0_5s" style="color: #fff;">Contact <span class="text-primary">Us</span></h1>
+          <p class="lead animate__animated animate__fadeInUp animate__delay-1s" style="color: #f7c08a;">We'd love to hear from you. Reach out for bookings or inquiries.</p>
+        </div>
+      </div>
+    </section>
+  </header>
+  <main class="container my-5 animate__animated animate__fadeIn">
+    <h1 class="mb-4 text-primary animate__animated animate__fadeInUp animate__delay-0_7s">Contact Us</h1>
+    <div class="divider mb-4 animate__animated animate__fadeInUp animate__delay-1s"></div>
+    <div class="row wow animate__animated animate__fadeInUp">
       <div class="col-md-6 mb-4 mb-md-0">
-        <form>
+        <form class="animate__animated animate__fadeInUp animate__delay-1_2s">
           <div class="mb-3">
             <label for="name" class="form-label">Name</label>
             <input type="text" class="form-control" id="name" placeholder="Your Name" required>
@@ -50,13 +62,14 @@
           <button type="submit" class="btn btn-primary">Send Message</button>
         </form>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6 animate__animated animate__fadeInUp animate__delay-1_4s">
         <h4>Hotel Address</h4>
         <p>Laalmani Kothi<br>Near Kashi Vishwanath Temple<br>Varanasi, Uttar Pradesh, India</p>
         <h4>Phone</h4>
         <p>+91-XXXXXXXXXX</p>
         <h4>Email</h4>
         <p>info@laalmanikothi.com</p>
+        <img src="img/2.png" alt="Laalmani Kothi Logo" class="img-fluid rounded shadow mt-4" style="max-width:200px;">
       </div>
     </div>
   </main>
@@ -89,6 +102,22 @@
       });
       link.addEventListener('mouseleave', () => {
         link.classList.remove('animate__animated', 'animate__pulse');
+      });
+    });
+    // Parallax tilt effect for images
+    document.querySelectorAll('.tilt-img').forEach(img => {
+      img.addEventListener('mousemove', function(e) {
+        const rect = img.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        const rotateX = ((y - centerY) / centerY) * 10;
+        const rotateY = ((x - centerX) / centerX) * 10;
+        img.style.transform = `rotateX(${-rotateX}deg) rotateY(${rotateY}deg)`;
+      });
+      img.addEventListener('mouseleave', function() {
+        img.style.transform = 'rotateX(0deg) rotateY(0deg)';
       });
     });
   </script>
